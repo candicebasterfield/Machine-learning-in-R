@@ -4,32 +4,33 @@ In this project, I used a wide array of baseline predictors (N=80), including ps
 
 #### Variables 
 ###### Predictors 
-At baseline, a wide array of predictors was included, clinical, psychological, sociodemographic, biological, and lifestyle, making up 80 variables.  
+At baseline, a wide array of predictors was included:
 
-*Sociodemographic Factors: Age, gender, race/ethnicity, marital status, and education.
+* Sociodemographic Factors: Age, gender, race/ethnicity, marital status, and education.
 
-*Life Challenges: Daily stressors (e.g., work overload, family arguments, traffic problems), chronic stressors (e.g., caregiving, perceived discrimination, perceived inequalities,  work-family spillover, childcare difficulties, unemployment), acute events (e.g., divorce, remarriage, job change, deaths, relocation).
+* Life Challenges: Daily stressors (e.g., work overload, family arguments, traffic problems), chronic stressors (e.g., caregiving, perceived discrimination, perceived inequalities,  work-family spillover, childcare difficulties, unemployment), acute events (e.g., divorce, remarriage, job change, deaths, relocation).
 
-*Health Behaviors: Smoking, alcohol consumption, physical activity, substance abuse, hormone therapy, preventive healthcare, alternative healthcare.
+* Health Behaviors: Smoking, alcohol consumption, physical activity, substance abuse, hormone therapy, preventive healthcare, alternative healthcare.
 
-*Psychological: Personality, affect, coping, control, goal orientations, optimism, religion/spirituality, and health beliefs.
+* Psychological: Personality, affect, coping, control, goal orientations, optimism, religion/spirituality, and health beliefs.
 
-*Social: Social support, spousal relations, parent-child ties, childhood violence, social participation, social responsibility, job characteristics, and neighborhood quality.
+* Social: Social support, spousal relations, parent-child ties, childhood violence, social participation, social responsibility, job characteristics, and neighborhood quality.
 
-*Health/Illness: Mental (depression, anxiety, psychological well-being, and cognitive function); physical (subjective health, health comparisons, chronic conditions, symptoms.
+* Health/Illness: Mental (depression, anxiety, psychological well-being, and cognitive function); physical (subjective health, health comparisons, chronic conditions, symptoms.
 
-*Disability/Functional Limitations, and Mortality
+* Disability/Functional Limitations, and Mortality
 
 Variables are described from https://midus.wisc.edu/ 
+
+* Outcome variable: The main outcome was recovery from GAD at a 9-year follow-up.
 
 
 #### Analyses
 
-Two machine learning models, gradient boosted trees, and elastic nets were compared to predict clinical courses in patients with GAD at 9-year follow-up:
-*Gradient boosted trees:
-*Elastic nets: 
-*Logistic regression was run with overlapping predictors from gradient boosted trees and elastic nets
+Two machine learning models, gradient boosted trees, and elastic nets were compared to predict clinical course in participants with GAD at 9-year follow-up:
+* Gradient boosted trees
+* Elastic nets
+* Logistic regression was run with overlapping predictors from gradient boosted trees and elastic nets
 
-
-
+The elastic net produces standardized coefficients equivalent to the log odds ratios of logistic regression. Shapley values are widely regarded as one of the most effective methods for attributing feature importance in complex models like boosted tree ensembles. These values draw inspiration from game theory principles and provide consistent and accurate measures of feature attribution. For the gradienmt boosted trees model, Shapley additive explanation (SHAP) values were implemented to quantify the impact on the change in log odds of a particular outcome. 
 
