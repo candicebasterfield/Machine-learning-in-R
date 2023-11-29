@@ -1,2 +1,41 @@
-
 # code
+### GAD ###
+###########
+
+# Baseline: subset people who have GAD
+subsetGAD <- subset(MIDUS_1, A1PANXTD == "(1) Positive") #192 
+
+
+# Create a vector of IDs from Time 1 dataframe
+ids_1 <- subsetGAD$M2ID 
+
+
+# Sub-setting so get the same people in each time frame:
+
+# Subset Time 2 data frame based on the IDs present in Time 1
+subset_time2 <- MIDUS_2[MIDUS_2$M2ID %in% ids_1, ] # 126 people in Time 2
+
+# Create a vector of IDs from Time 2 data frame 
+ids_2 <- subset_time2$M2ID 
+
+
+# Select same people from time 1
+subset_time1<- subsetGAD[subsetGAD$M2ID %in% ids_2, ]
+
+
+
+# Merge data frames 
+merged_df_GAD <- merge(subset_time1, subset_time2, by = "M2ID", all = TRUE) # 126 observations
+
+
+#GAD:
+table(merged_df_GAD$B1PANXTD) # 126
+
+#names(merged_df_GAD)
+
+# These variables are missing here??????????
+#merged_df_GAD$A1PPANIC
+#merged_df_GAD$A1PDEPRE
+
+
+names(merged_df_GAD)
